@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 122
+  rpc: https://rpc.fuse.io
+  start_block: 32498119
+  contracts:
+  - name: AlgebraFactory
+    address:
+    - 0xccEdb990abBf0606Cf47e7C6A26e419931c7dc1F
+    handler: src/EventHandlers.ts
+    events:
+    - event: CustomPool(address indexed deployer, address indexed token0, address indexed token1, address pool)
+    - event: DefaultCommunityFee(uint16 newDefaultCommunityFee)
+    - event: DefaultFee(uint16 newDefaultFee)
+    - event: DefaultPluginFactory(address defaultPluginFactoryAddress)
+    - event: DefaultTickspacing(int24 newDefaultTickspacing)
+    - event: OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Pool(address indexed token0, address indexed token1, address pool)
+    - event: RenounceOwnershipFinish(uint256 timestamp)
+    - event: RenounceOwnershipStart(uint256 timestamp, uint256 finishTimestamp)
+    - event: RenounceOwnershipStop(uint256 timestamp)
+    - event: RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
+    - event: RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: VaultFactory(address newVaultFactory)
+  - name: AlgebraPool
+    address:
+    - 0x55076eECCEDb8869f3C9670D9C8062D3FCB61b7c
+    handler: src/EventHandlers.ts
+    events:
+    - event: Burn(address indexed owner, int24 indexed bottomTick, int24 indexed topTick, uint128 liquidityAmount, uint256 amount0, uint256 amount1, uint24 pluginFee)
+    - event: Collect(address indexed owner, address recipient, int24 indexed bottomTick, int24 indexed topTick, uint128 amount0, uint128 amount1)
+    - event: CommunityFee(uint16 communityFeeNew)
+    - event: CommunityVault(address newCommunityVault)
+    - event: ExcessTokens(uint256 amount0, uint256 amount1)
+    - event: Fee(uint16 fee)
+    - event: Flash(address indexed sender, address indexed recipient, uint256 amount0, uint256 amount1, uint256 paid0, uint256 paid1)
+    - event: Initialize(uint160 price, int24 tick)
+    - event: Mint(address sender, address indexed owner, int24 indexed bottomTick, int24 indexed topTick, uint128 liquidityAmount, uint256 amount0, uint256 amount1)
+    - event: Plugin(address newPluginAddress)
+    - event: PluginConfig(uint8 newPluginConfig)
+    - event: Skim(address indexed to, uint256 amount0, uint256 amount1)
+    - event: Swap(address indexed sender, address indexed recipient, int256 amount0, int256 amount1, uint160 price, uint128 liquidity, int24 tick, uint24 overrideFee, uint24 pluginFee)
+    - event: TickSpacing(int24 newTickSpacing)
+unordered_multichain_mode: true
+preload_handlers: true

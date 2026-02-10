@@ -1,0 +1,193 @@
+type AlgebraFactory_CustomPool {
+  id: ID!
+  deployer: String!
+  token0: String!
+  token1: String!
+  pool: String!
+}
+
+type AlgebraFactory_DefaultCommunityFee {
+  id: ID!
+  newDefaultCommunityFee: BigInt!
+}
+
+type AlgebraFactory_DefaultFee {
+  id: ID!
+  newDefaultFee: BigInt!
+}
+
+type AlgebraFactory_DefaultPluginFactory {
+  id: ID!
+  defaultPluginFactoryAddress: String!
+}
+
+type AlgebraFactory_DefaultTickspacing {
+  id: ID!
+  newDefaultTickspacing: BigInt!
+}
+
+type AlgebraFactory_OwnershipTransferStarted {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type AlgebraFactory_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type AlgebraFactory_Pool {
+  id: ID!
+  token0: String!
+  token1: String!
+  pool: String!
+}
+
+type AlgebraFactory_RenounceOwnershipFinish {
+  id: ID!
+  timestamp: BigInt!
+}
+
+type AlgebraFactory_RenounceOwnershipStart {
+  id: ID!
+  timestamp: BigInt!
+  finishTimestamp: BigInt!
+}
+
+type AlgebraFactory_RenounceOwnershipStop {
+  id: ID!
+  timestamp: BigInt!
+}
+
+type AlgebraFactory_RoleAdminChanged {
+  id: ID!
+  role: String!
+  previousAdminRole: String!
+  newAdminRole: String!
+}
+
+type AlgebraFactory_RoleGranted {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type AlgebraFactory_RoleRevoked {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type AlgebraFactory_VaultFactory {
+  id: ID!
+  newVaultFactory: String!
+}
+
+type AlgebraPool_Burn {
+  id: ID!
+  owner: String!
+  bottomTick: BigInt!
+  topTick: BigInt!
+  liquidityAmount: BigInt!
+  amount0: BigInt!
+  amount1: BigInt!
+  pluginFee: BigInt!
+}
+
+type AlgebraPool_Collect {
+  id: ID!
+  owner: String!
+  recipient: String!
+  bottomTick: BigInt!
+  topTick: BigInt!
+  amount0: BigInt!
+  amount1: BigInt!
+}
+
+type AlgebraPool_CommunityFee {
+  id: ID!
+  communityFeeNew: BigInt!
+}
+
+type AlgebraPool_CommunityVault {
+  id: ID!
+  newCommunityVault: String!
+}
+
+type AlgebraPool_ExcessTokens {
+  id: ID!
+  amount0: BigInt!
+  amount1: BigInt!
+}
+
+type AlgebraPool_Fee {
+  id: ID!
+  fee: BigInt!
+}
+
+type AlgebraPool_Flash {
+  id: ID!
+  sender: String!
+  recipient: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  paid0: BigInt!
+  paid1: BigInt!
+}
+
+type AlgebraPool_Initialize {
+  id: ID!
+  price: BigInt!
+  tick: BigInt!
+}
+
+type AlgebraPool_Mint {
+  id: ID!
+  sender: String!
+  owner: String!
+  bottomTick: BigInt!
+  topTick: BigInt!
+  liquidityAmount: BigInt!
+  amount0: BigInt!
+  amount1: BigInt!
+}
+
+type AlgebraPool_Plugin {
+  id: ID!
+  newPluginAddress: String!
+}
+
+type AlgebraPool_PluginConfig {
+  id: ID!
+  newPluginConfig: BigInt!
+}
+
+type AlgebraPool_Skim {
+  id: ID!
+  to: String!
+  amount0: BigInt!
+  amount1: BigInt!
+}
+
+type AlgebraPool_Swap {
+  id: ID!
+  sender: String!
+  recipient: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  price: BigInt!
+  liquidity: BigInt!
+  tick: BigInt!
+  overrideFee: BigInt!
+  pluginFee: BigInt!
+}
+
+type AlgebraPool_TickSpacing {
+  id: ID!
+  newTickSpacing: BigInt!
+}
+
